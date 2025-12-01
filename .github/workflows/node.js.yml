@@ -10,16 +10,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout branch
-    - uses: actions/checkout@v4
+    - name: Checkout action node
+    - uses: actions/checkout@v3
     
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
+    - name: Set up Node
+      uses: actions/setup-node@v3
       with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
+        node-version: 20
 
     - name: Deploy
-    - run: npm install
-    - run: npm run build
-    - run: npm run preview
+    - run: |
+        npm install
+        npm run build
+        npm run preview
