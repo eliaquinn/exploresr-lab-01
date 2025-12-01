@@ -11,7 +11,7 @@ jobs:
 
     steps:
     - name: Checkout action node
-    - uses: actions/checkout@v3
+      uses: actions/checkout@v3
     
     - name: Set up Node
       uses: actions/setup-node@v3
@@ -19,7 +19,7 @@ jobs:
         node-version: 20
 
     - name: Deploy
-    - run: |
+      run: |
         npm install
         npm run build
         npm run preview
